@@ -50,3 +50,14 @@ This repository contains ETL pipeline for https://www.ncbi.nlm.nih.gov/geo/ and 
     }
 ```
 
+## Running on docker (Partial)
+1. To run prefect on Docker, write a Dockerfile containing following components:
+    - FROM: base image that we will be using for our image
+    - WORKDIR: setting working directory for the container
+    - ADD: add all of our files from the current directory to the container WORKDIR
+    - RUN: install our library . This will also install all requirements.
+
+2. Building an image:
+<code>docker build . -t test:latest</code>
+
+3. After creating image push to registry (using DockerHub)
